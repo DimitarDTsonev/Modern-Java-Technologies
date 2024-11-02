@@ -34,6 +34,5 @@ public class Main {
             throw new RuntimeException(e);
         }
         System.out.println(priceToPay);
-        System.out.println("This is just for test");
     }
 }
