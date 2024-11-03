@@ -63,11 +63,11 @@ public abstract sealed class Vehicle permits Bicycle, MotorVehicle {
      * Used to calculate potential rental price without the vehicle to be rented.
      * The calculation is based on the type of the Vehicle (Car/Caravan/Bicycle).
      *
-     * @param startOfRent the beginning of the rental
-     * @param endOfRent   the end of the rental
+     * @param  startOfRent                     the beginning of the rental
+     * @param  endOfRent                       the end of the rental
      * @return potential price for rent
-     * @throws InvalidRentingPeriodException in case the vehicle cannot be rented for that period of time or
-     *                                       the period is not valid (end date is before start date)
+     * @throws InvalidRentingPeriodException   in case the vehicle cannot be rented for that period of time or
+     *                                         the period is not valid (end date is before start date)
      */
     public abstract double calculateRentalPrice(LocalDateTime startOfRent, LocalDateTime endOfRent) throws InvalidRentingPeriodException;
 
@@ -89,6 +89,11 @@ public abstract sealed class Vehicle permits Bicycle, MotorVehicle {
         return startRentTime;
     }
 
+    /**
+     * Used to get the is the vehicle is already rented.
+     *
+     * @return true if the vehicle is rented, otherwise false.
+     */
     public boolean isRented() {
         return isRented;
     }
