@@ -52,8 +52,8 @@ public abstract sealed class Vehicle permits Bicycle, MotorVehicle {
      *                                       and the driver tries to return them after an hour.
      */
     public void returnBack(LocalDateTime rentalEnd) throws InvalidRentingPeriodException {
-        Validator.validateRentingPeriod(startRentTime, rentalEnd);
         Validator.validateNotRented(isRented);
+        Validator.validateRentingPeriod(startRentTime, rentalEnd);
 
         driver = null;
         isRented = false;
