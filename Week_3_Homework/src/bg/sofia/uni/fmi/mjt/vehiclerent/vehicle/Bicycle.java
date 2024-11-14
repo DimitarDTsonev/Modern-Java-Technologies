@@ -20,17 +20,22 @@ public final class Bicycle extends Vehicle {
      * Used to calculate potential rental price without the vehicle to be rented.
      * The calculation is based on the type of the Vehicle (Car/Caravan/Bicycle).
      *
-     * @param startOfRent the beginning of the rental
-     * @param endOfRent   the end of the rental
-     * @return potential price for rent
-     * @throws InvalidRentingPeriodException in case the vehicle cannot be rented for that period of time or
-     *                                       the period is not valid (end date is before start date)
+     * @param startOfRent                     the beginning of the rental
+     * @param endOfRent                       the end of the rental
+     * @return                                potential price for rent
+     * @throws InvalidRentingPeriodException  in case the vehicle cannot be rented for that period of time or
+     *                                        the period is not valid (end date is before start date)
      */
     @Override
+<<<<<<< HEAD
     public double calculateRentalPrice(LocalDateTime startOfRent, LocalDateTime endOfRent)
             throws InvalidRentingPeriodException {
         Validator.validateRentingPeriod(startOfRent, endOfRent);
+=======
+    public double calculateRentalPrice(LocalDateTime startOfRent, LocalDateTime endOfRent) throws InvalidRentingPeriodException {
+>>>>>>> 00e36b38b06ae36459cde9a10d779b28e889a449
         Validator.validateBicycleRentalDuration(startOfRent, endOfRent);
+        Validator.validateRentingPeriod(startOfRent, endOfRent);
 
         Duration rentalDuration = Duration.between(startOfRent, endOfRent);
         long hours = rentalDuration.toHours();

@@ -45,12 +45,12 @@ public class Validator {
      */
     public static void validateRentingPeriod(LocalDateTime startOfRent,
                                              LocalDateTime endOfRent) throws InvalidRentingPeriodException {
-        validateStartingPeriod(startOfRent);
-        validateEndingPeriod(endOfRent);
-
         if (endOfRent.isBefore(startOfRent) || endOfRent.isEqual(startOfRent)) {
             throw new InvalidRentingPeriodException(ExpMessages.INVALID_RENTING_PERIOD);
         }
+        
+        validateStartingPeriod(startOfRent);
+        validateEndingPeriod(endOfRent);
     }
 
     /**
