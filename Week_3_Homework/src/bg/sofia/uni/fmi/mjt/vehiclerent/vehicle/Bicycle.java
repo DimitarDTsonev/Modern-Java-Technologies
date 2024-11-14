@@ -27,7 +27,8 @@ public final class Bicycle extends Vehicle {
      *                                       the period is not valid (end date is before start date)
      */
     @Override
-    public double calculateRentalPrice(LocalDateTime startOfRent, LocalDateTime endOfRent) throws InvalidRentingPeriodException {
+    public double calculateRentalPrice(LocalDateTime startOfRent, LocalDateTime endOfRent)
+            throws InvalidRentingPeriodException {
         Validator.validateRentingPeriod(startOfRent, endOfRent);
         Validator.validateBicycleRentalDuration(startOfRent, endOfRent);
 
